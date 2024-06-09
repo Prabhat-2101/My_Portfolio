@@ -1,0 +1,46 @@
+@media only screen and (max-width: 426px) {
+    .logo {display: none;}
+    .header-text{display: flex; flex-direction: column-reverse;}
+    .left{font-size: 1.5rem;text-align: center;}
+    .right{display: flex;justify-content: center;}
+    .left-part { display: none;}
+    .right-part{width: 100%; margin-left: 0px;}
+    .service-info,.coding-info,.career {padding: 5px 5%;}
+    .my-info{padding: 5px 2%;width: 100%;display: flex; justify-content: center;}
+    .services ,.works {display: grid;
+        grid-template-columns: repeat(1, 1fr);grid-row-gap: 15px}
+    .services div,.works div {width: 100%;}
+    .navigation-list {display: none;flex-direction: column;width: 100%;}
+    .nav-list li {text-align: center;padding: 10px 0;}
+    .hamburger-menu {display: block;}
+}
+
+/* For devices with width between 426px and 768px */
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+    .logo {display: none;}
+    .navigation-list{ display: flex; justify-content: space-evenly;}
+    .header-text{display: flex; flex-direction: column-reverse;}
+    .left{font-size: 1.8rem;text-align: center;}
+    .right{display: flex;justify-content: center;}
+    .left-part { width: 100%; display: flex; justify-content: center; align-items: center; }
+    .right-part{width: 100%; margin-left: 0px;}
+    .my-info{flex-direction: column;width: 100%;display: flex; justify-content: center;}
+    .services ,.works {display: grid;
+        grid-template-columns: repeat(2, 1fr); grid-row-gap: 15px; gap: 20px;}
+    .services div,.works div {width: 100%;}
+    .services div p {font-size: small;}
+}
+
+/* For devices with width between 769px and 1024px */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .services div,.works div{
+        width: 90%;
+    }
+}
+
+/* For devices with width greater than 1024px */
+@media only screen and (min-width: 1025px) {
+    .services div,.works div{
+        width: 90%;
+    }
+}

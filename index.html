@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prabhat Kumar Raj's Portfolio</title>
+    <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="Styles/style.css">
+    <link rel="stylesheet" href="Styles/media_query.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="container">
+        <!-- Navigation Container -->
+        <div class="nav-container">
+            <nav class="nav-list">
+                <a href="#"><img src="Images/pkr_logo.png" alt="Logo" class="logo"></a>
+                <div class="hamburger-menu" id="hamburgerMenu">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <ul class="navigation-list">
+                    <!-- Replace Actual hyperlink to html files-->
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#myInfo" >About Me</a></li>
+                    <li><a href="#myServices">Services</a></li>
+                    <li><a href="#myCareer">Project</a></li>
+                    <li><a href="#myContact" id="contactLink">Contact Me</a></li>
+                    <button id="colorModeToggle"><i class="fas fa-toggle-on" id="on"></i>
+                        <i class="fas fa-toggle-off" id="off" style="display: none;"></i></button>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <div class="left">
+                <h1>Namaste, I am <span id="name">Prabhat</span></h1>
+                <div>I am a Professional</div>
+                <span id="element"></span>
+                <br>
+			    <p><a href="OtherResource/prabhat_resume_updated.pdf" class="home-button" target="_blank" >Download CV</a> 
+				<a href="https://github.com/Prabhat-2101/" class="home-button" target="_blank">My Works</a>
+				</p></div>
+                <div class="right"><img src="Images/image.png" alt=""></div>
+            </div>
+        </div>
+
+        <!-- Contact Me PopUp page-->
+        <div id="contactModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modalBody">
+                    <!-- Content from contact.html will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- About Me Section -->
+        <div class="my-info" id="myInfo">
+            <div class="left-part">
+                <img src="Images/prabhat.jpg" id="img">
+            </div>
+            <div class="right-part">
+                <h1>About Me </h1>
+                <p style="text-align: justify;">As a fresh graduate in Computer Science and Engineering, I specialize in web & development with hands-on experience in deploying deep learning and machine learning based applications, I bring a unique blend of technical prowess and creative problem-solving to the table, eager to make a mark in the digital landscape.</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('Education')">Education</p>
+                </div>
+                <div class="tab-content active-tab" id="Skills">
+                    <div class="skill-mf">
+                        <div id="skills-list"></div>
+                    </div>
+                    <script>
+                        const skills = [
+                            { subject: 'C++', proficiency: 95 },
+                            { subject: 'PYTHON', proficiency: 85 },
+                            { subject: 'Machine Learning & Deep Learning', proficiency: 80 },
+                            { subject: 'Cyber Secuirity', proficiency: 75 },
+                            { subject: 'DevOps Engineering', proficiency: 55 },
+                        ];
+
+                        function generateSkillsHTML() {
+                            const skillsList = document.getElementById('skills-list');
+                            skills.forEach(skill => {
+                                const skillHTML = `
+                                    <span>${skill.subject}</span>
+                                    <span class="pull-right">${skill.proficiency}%</span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: ${skill.proficiency}%" aria-valuenow="${skill.proficiency}" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                `;
+                                skillsList.insertAdjacentHTML('beforeend', skillHTML);
+                            });
+                        }
+                        generateSkillsHTML();
+                    </script>
+                </div>
+                <div class="tab-content" id="Education">
+                    <ul>
+                        <li><span>Matriculation </span><button class="educate-button" data-education="matric"> View Details</button></li>
+                        <li><span>Intermediate</span><button class="educate-button" data-education="intermediate">View Details</button></li>
+                        <li><span>Bachelor of Technology </span><button class="educate-button" data-education="bachelor"> View Details </button></li>
+                    </ul>
+                </div>
+                <div class="popup-window" id="popup">
+                    <div class="popup-content">
+                        <span class="close-button" id="closeButton">&times;</span>
+                        <div style="text-align: center;font-variant: small-caps;"><h3 id="educationTitle"></h3></div>
+                        <hr style="border: 1px gray solid;color: white;height: 2px;background-color: white;">
+                        <div class="education-details" style="padding: 10px;">
+                        <div><strong>College Name:</strong> <span id="popupCollegeName"></span></div>
+                        <div><strong>Year of Passing:</strong> <span id="popupYear"></span></div>
+                        <div><strong>CGPA:</strong> <span id="popupCGPA"></span></div>
+                        <div><strong>Achievements:</strong><ul id="popupAchievements"></ul></div>
+                        <div style="display: flex; justify-content: center;"> <button class="educate-button">See Marksheet</button></div></div>
+                    </div>
+                </div>
+                <div class="tab-content" id="Experience">
+                    <ul>
+                        <li><span>Intern</span><br>Working as Technology & Development Intern in VFSTR</li>
+                        <li><span>Responsibilities</span><br>Worked as Deputy Secretary in VCODE-2023 <br>Student Cordinator in Mahotsav-2023 & Srujanankura-2023</li>
+                    </ul>
+                </div>
+                <div class="text" style="display: flex; align-items: center; justify-content: center;">
+                    <p><a href="https://www.linkedin.com/in/prabhat-kumar-raj-96681623b/" class="home-button" target="_blank">Visit LinkedIn</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="service-info" id="myServices">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services">
+                <div class="services-list">
+                    <h2>Web Developement</h2>
+                    <hr>
+                    <p> As a skilled web developer, I specialize in creating dynamic and responsive websites that make a lasting impression. Utilizing the latest technologies such as HTML5, CSS3, and JavaScript, along with frameworks like React and Angular, I design and develop bespoke web solutions tailored to your unique needs. With meticulous attention to detail, I ensure that every website I build not only looks stunning but also functions seamlessly across devices, delivering an exceptional user experience.
+                    </p>
+                </div>
+                <div class="services-list">
+                    <h2>App Developement</h2>
+                    <hr>
+                    <p> With a passion for innovation, I excel in crafting user-centric mobile applications that bring ideas to life. Whether it's native iOS or Android development using Swift, Kotlin, or cross-platform solutions like React Native and Flutter, I have the expertise to turn your app vision into reality. From concept to deployment, I prioritize functionality, performance, and user experience, ensuring that each app I create is intuitive, reliable, and visually appealing. 
+                    </p>
+                </div>
+                <div class="services-list">
+                    <h2>Deep Learning Based Apps</h2>
+                    <hr>
+                    <p>Deep learning-based apps leverage sophisticated neural network architectures to perform complex tasks such as image recognition, natural language processing, and recommendation systems. These applications harness the power of deep learning algorithms to achieve unparalleled accuracy and efficiency in tasks ranging from medical diagnostics to autonomous driving, revolutionizing industries and enhancing user experiences.</p>
+                </div>
+            </div>
+            <div class="redirect-buttom" style="text-align: center;"><a href="#" class="home-button">Visit Clients</a></div>
+        </div>
+
+        <!-- CodingCareer Section -->
+        <div class="coding-info" id="myCoding">
+            <h1>My Coding Profile <i id="infoButton" class="fas fa-info-circle"></i>
+                <div id="notice" class="notice">Contest rankings are dynamic and may change weekly.</div>
+                </h1>
+            <div class="works code-info">
+                <div>
+                    <img src="Images/cc.jpeg" alt="">
+                    <div class="desc">
+                        <p>Global Rank: <span id="global-rank">13730</span></p>
+                        <h3><a href="https://www.codechef.com/users/prabhat2101">Codechef</a></h3>
+                    </div>
+                </div>
+                <div>
+                    <img src="Images/lc.png" alt="">
+                    <div class="desc">
+                        <p>Global Rank: <span id="global-rank">Top 16.6%</span></p>
+                        <h3><a href="https://leetcode.com/u/Prabhat_2101/">Leetcode</a></h3>
+                    </div>
+                </div>
+                <div>
+                    <img src="Images/gfg.png" alt="">
+                    <div class="desc">
+                        <p>University Rank: <span id="global-rank">4</span></p>
+                        <h3><a href="https://www.geeksforgeeks.org/user/sahprabhypbj/">GeeksForGeeks</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="redirect-buttom" style="text-align: center;"><a href="#myCoding" class="home-button" >Visit Coding Journey</a></div>
+        </div>
+
+        <!-- ProjectCareer Section -->
+        <div class="career" id="myCareer">
+            <h1>My Projects</h1>
+            <div class="works">
+                <div>
+                    <img src="Images/ride.png" alt="">
+                    <div class="desc">
+                        <h3><a href="https://github.com/Prabhat-2101/Ride-Karo">Ride Karo App (to be uploaded)</a></h3>
+                    </div>
+                </div>
+                <div>
+                    <img src="Images/cat_dog.png" alt="">
+                    <div class="desc">
+                        <h3><a href="https://github.com/Prabhat-2101/Cat_Dog_Classifier_App_Using_Custom_CNN">Cat-Dog Classifier</a></h3>
+                    </div>
+                </div>
+                <div>
+                    <img src="Images/digit.png" alt="">
+                    <div class="desc">
+                        <h3><a href="https://github.com/Prabhat-2101/Handwritten-Digit-Recognition-using-deep-learning">Handwritten Digit Recognition</a></h3>
+                    </div>
+                </div>
+                <div>
+                    <img src="Images/emotion.png" alt="">
+                    <div class="desc">
+                        <h3><a href="https://github.com/Prabhat-2101/Emotion_Detection_Using_DeepLearning">Emotion Detection</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="redirect-buttom" style="text-align: center;"><a href="https://github.com/Prabhat-2101/" class="home-button" target="_blank">Visit More Project</a></div>
+        </div>
+
+        <!-- Footer Section -->
+        <footer class="footer" id="myContact">
+            <div class="footer-container">
+                <div class="social-media">
+                    <a href="https://www.instagram.com/prabhat_sah_18/" class="fa fa-instagram"></a>
+                    <a href="https://www.twitter.com" class="fa fa-twitter"></a>
+                    <a href="https://www.linkedin.com/in/prabhat-kumar-raj-96681623b/" class="fa fa-linkedin"></a>
+                    <a href="https://www.github.com" class="fa fa-github"></a>
+                </div>
+                <div class="contact-info">
+                    <p>Email: sahprabhat2101@gmail.com</p>
+                    <p>Phone: +91 9507286383</p>
+                    <p>Address: Meena Bazar NH-28A 2<sup>nd</sup> Street, Motihari</p>
+                </div>
+                <div class="privacy-policy">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms and Conditions</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<script>
+    /* Typed Message*/
+    var typed = new Typed('#element', {
+    strings: ['Web Developer.','App Developer.','DevOps Engineer.'],typeSpeed: 40,});
+    
+    /*  Showing tabs in about-me section */
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontent = document.getElementsByClassName("tab-content");
+    function opentab(tabName){
+        for(tab of tablinks){
+            tab.classList.remove("active-link");
+        }
+        for(tab of tabcontent){
+            tab.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabName).classList.add("active-tab");
+    }
+    
+    /* adding an event listener to show the contact page in popup view */
+    document.getElementById('contactLink').addEventListener('click', function(event) {
+        event.preventDefault();
+        showModal();
+    });
+
+    document.querySelector('.close').addEventListener('click', function() {
+        hideModal();
+    });
+
+    function showModal() {
+        fetch('contact.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('modalBody').innerHTML = data;
+                document.getElementById('contactModal').style.display = 'block';
+            });
+    }
+
+    function hideModal() {
+        document.getElementById('contactModal').style.display = 'none';
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        const buttons = document.querySelectorAll('.educate-button');
+        const popup = document.getElementById('popup');
+        const closeButton = document.getElementById('closeButton');
+        const popupEducationTitle = document.getElementById('educationTitle');
+        const popupCollegeName = document.getElementById('popupCollegeName');
+        const popupYear = document.getElementById('popupYear');
+        const popupCGPA = document.getElementById('popupCGPA');
+        const popupAchievements = document.getElementById('popupAchievements');
+        let flag = 0;   /* 0: Dark, 1: Light */
+        /*Education Details of 10th , 12th, B.tech*/
+        const educationDetails = {
+            intermediate: {
+                title:"Intermediate's Details",
+                collegeName: "Shri Narayan Singh College",
+                year: "2017-2019",
+                cgpa: "7.54",
+                achievements: ["Highest Math Scorer"]
+            },
+            bachelor: {
+                title:"Bachelor's Details",
+                collegeName: "Vignan's Foundation for science, technology & research",
+                year: "2021-2025",
+                cgpa: "8.7",
+                achievements: ["Department Rank Holder", "Programming Contest Winner"]
+            },
+            matric: {
+                title:"Tenth's Details",
+                collegeName: "Gopal Sah High School",
+                year: "2016-2017",
+                cgpa: "7.7",
+                achievements: []
+            }
+        };
+
+        /*About Me section to show skill, experience and education*/
+        buttons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const educationType = event.target.getAttribute('data-education');
+                const details = educationDetails[educationType];
+                educationTitle.textContent = details.title;
+                popupCollegeName.textContent = details.collegeName;
+                popupYear.textContent = details.year;
+                popupCGPA.textContent = details.cgpa;
+                
+                popupAchievements.innerHTML = '';
+                details.achievements.forEach(achievement => {
+                    const li = document.createElement('li');
+                    li.textContent = achievement;
+                    popupAchievements.appendChild(li);
+                });
+
+                popup.style.display = 'block';
+            });
+        });
+
+        closeButton.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+
+        /*Showing the contact page using pop up window*/
+        window.addEventListener('click', (event) => {
+            if (event.target === popup) {
+                popup.style.display = 'none';
+            }
+            if (event.target == document.getElementById('contactModal')) {
+                hideModal();
+            }
+        });
+
+        /* Switching the modes*/
+        colorModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            console.warn('Mode changed');
+            document.getElementsByClassName('hamburger-menu').classList.toggle('dark-mode');
+            const offButton = document.querySelector('#off');
+            const onButton = document.querySelector('#on');
+            if(flag==1) {
+                offButton.style.display = "none";
+                onButton.style.display = "block";
+                flag = 0;
+            }else{
+                offButton.style.display = "block";
+                onButton.style.display = "none";
+                flag = 1;
+            }
+        });
+    });
+    
+    /*----- Hamburger and Navigation List-------*/
+    document.getElementById('hamburgerMenu').addEventListener('click', function() {
+        var navList = document.querySelector('.navigation-list');
+        if (navList.style.display === 'block') {
+            navList.style.display = 'none';
+        } else {
+            navList.style.display = 'block';
+        }
+    });
+    
+    /*Showing Notice in Coding Info section in pop up*/
+    document.getElementById('infoButton').addEventListener('click', function(event) {
+        var notice = document.getElementById('notice');
+        if (notice.style.display === 'block') {
+            notice.style.display = 'none';
+        } else {
+            var buttonRect = event.target.getBoundingClientRect();
+            notice.style.display = 'block';
+            notice.style.top = (buttonRect.bottom + window.scrollY) + 'px';
+            notice.style.left =  buttonRect.left + 'px';
+        }
+    });
+
+    // Close notice when clicking outside
+    document.addEventListener('click', function(event) {
+        var notice = document.getElementById('notice');
+        if (!event.target.matches('#infoButton') && !event.target.matches('.notice')) {
+            notice.style.display = 'none';
+        }
+    });
+
+</script>
+</html>
