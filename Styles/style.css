@@ -321,13 +321,12 @@ nav ul li a:hover::after{
 }
 .works div img:hover{
     transform: scale(1.05);
-    margin-bottom: 10px;
 }
 .works .desc{
     height: 10%;
     width: 100%;
     text-align: center;
-    padding: 3px 0px;
+    padding: 5px;
 }
 .works .desc a{
     text-decoration: none;
