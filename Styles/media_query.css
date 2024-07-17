@@ -38,6 +38,7 @@
     .left-part #img {width: 60%;}
     .services div,.works div{
         width: 90%;
+        height: 200px;
     }
 }
 
