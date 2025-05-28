@@ -33,5 +33,10 @@ const repos = [
         "description": "A natural language processing model to classify movie reviews as positive or negative.",
         "created_at": "2025-02-20T17:33:20Z",
         "html_url": "https://github.com/Prabhat-2101/Movie_review_classifier"
+    },
+    {
+        "name": "CollegeTips_Gallery",
+        "html_url" : "https://github.com/Prabhat-2101/Collegetips_Gallery",
+        "created_at": "2025-05-26T17:33:20Z",
     }
 ]
