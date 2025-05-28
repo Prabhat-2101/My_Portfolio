@@ -1,416 +1,509 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prabhat Kumar Raj's Portfolio</title>
-    <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="Styles/style.css">
-    <link rel="stylesheet" href="Styles/media_query.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-    <div id="container">
-        <!-- Navigation Container -->
-        <div class="nav-container">
-            <nav class="nav-list">
-                <a href="https://www.prabhatraj.tech" target="_blank"><img src="Images/pkr_logo.png" alt="Logo" class="logo"></a>
-                <div class="hamburger-menu" id="hamburgerMenu">
-                    <i class="fa fa-bars"></i>
-                </div>
-                <ul class="navigation-list">
-                    <!-- Replace Actual hyperlink to html files-->
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#myInfo" >About Me</a></li>
-                    <li><a href="#myServices">Services</a></li>
-                    <li><a href="#myCareer">Project</a></li>
-                    <li><a href="#myContact" id="contactLink">Contact Me</a></li>
-                    <button id="colorModeToggle">
-                        <i class="fas fa-toggle-on" id="on"></i>
-                        <i class="fas fa-toggle-off" id="off" style="display: none;"></i>
-                    </button>
-                </ul>
-            </nav>
-            <div class="header-text">
-                <div class="left">
-                <h1>Namaste, I am <span id="name">Prabhat</span></h1>
-                <div>I am a Professional</div>
-                <span id="element"></span>
-                <br>
-			    <p><a href="OtherResource/prabhat_resume_updated.pdf" class="home-button" target="_blank" >Download CV</a> 
-				<a href="https://github.com/Prabhat-2101/" class="home-button" target="_blank">My Works</a>
-				</p></div>
-                <div class="right"><img src="Images/image.png" alt=""></div>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prabhat Kumar Raj</title>
+    <meta
+      name="description"
+      content="Portfolio of Prabhat Kumar Raj, a web developer with expertise in MERN Stack development."
+    />
+    <meta
+      name="keywords"
+      content="Prabhat Kumar Raj, web developer, MERN Stack, portfolio"
+    />
+    <meta name="author" content="Prabhat Kumar Raj" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="repos.js"></script>
+    <link rel="shortcut icon" href="assets/logo.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Grechen+Fuemen&family=Iceberg&family=Jacquard+12&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-black overflow-x-hidden">
+    <div class="container flex flex-col w-full relative">
+      <div
+        id="cursor-box"
+        class="fixed top-0 left-0 rounded-full h-4 w-4 bg-white z-50 pointer-events-none"
+      ></div>
+      <nav class="flex justify-between items-center w-full h-20 px-10 py-4">
+        <h2 class="text-white text-3xl" id="nav-title">My Portfolio</h2>
+        <i
+          class="ri-menu-3-line text-white text-3xl cursor-pointer"
+          id="sidebar-btn"
+        ></i>
+      </nav>
+      <div
+        class="nav-overlay-box absolute w-1/5 top-0 -right-1/4 h-150 z-30"
+        id="nav-overlay"
+      >
+        <div
+          id="close"
+          class="absolute top-0 right-0 text-3xl p-2 cursor-pointer"
+        >
+          <i class="ri-close-circle-line"></i>
+        </div>
+        <ul
+          class="list-none flex flex-col h-150 text-3xl p-5 mt-5 gap-4 font-white"
+        >
+          <li class="nav-items"><a href="#home">Home</a></li>
+          <li class="nav-items"><a href="#about">About</a></li>
+          <li class="nav-items"><a href="#journey">Journey</a></li>
+          <li class="nav-items"><a href="#project">Project</a></li>
+        </ul>
+      </div>
+      <section class="landing-box w-full min-h-screen relative overflow-hidden" id="home">
+        <!-- Background video -->
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          class="absolute w-full h-full object-cover"
+          style="backdrop-filter: blur(3px)"
+        >
+          <source src="./assets/coding-loop.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <!-- Dark overlay with blur -->
+        <div
+          class="absolute inset-0 z-10 bg-gradient-to-br from-black/70 via-black/50 to-black/70 backdrop-blur-sm"
+        ></div>
+
+        <!-- Hero Content -->
+        <div
+          class="absolute top-1/2 left-1/2 z-20 text-center transform -translate-x-1/2 -translate-y-1/2 w-full px-4"
+        >
+          <h1
+            id="hero-name"
+            class="text-white text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-bold"
+          >
+            Prabhat Kumar Raj
+          </h1>
+
+          <div class="mt-6 flex flex-wrap justify-center gap-4 sm:gap-6" id="hero-socials">
+            <a
+              href="https://github.com/Prabhat-2101/"
+              target="_blank"
+              class="social-icon"
+            >
+              <img
+                src="./assets/github.svg"
+                alt="GitHub"
+                class="bg-white rounded-full w-10 h-10 p-1"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/prabhat-kumar-raj-96681623b/"
+              target="_blank"
+              class="social-icon"
+            >
+              <img
+                src="./assets/linkedin.svg"
+                alt="LinkedIn"
+                class="bg-white rounded-full w-10 h-10 p-1"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/prabhat_sah_18/"
+              target="_blank"
+              class="social-icon"
+            >
+              <img
+                src="./assets/instagram.svg"
+                alt="Instagram"
+                class="bg-white rounded-full w-10 h-10 p-1"
+              />
+            </a>
+            <a href="./assets/Resume.pdf" target="_blank" class="social-icon">
+              <img
+                src="./assets/resume.svg"
+                alt="Resume"
+                class="bg-white rounded-full w-10 h-10 p-1"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+      <div class="w-full mt-10 mb-10 flex justify-center items-center">
+        <div class="w-150 border-2 border-white"></div>
+      </div>
+      <section
+        class="about-box w-full flex flex-col md:flex-row items-center justify-center px-6 sm:px-10 py-10 gap-10 md:gap-0"
+        id="about"
+      >
+        <!-- Left Side Image -->
+        <div class="w-full md:w-1/2 flex justify-center items-center">
+          <img
+            src="./assets/profile.png"
+            alt="Prabhat Kumar Raj"
+            id="about-img"
+            class="w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 object-cover rounded-full shadow-lg border-4 border-white/20"
+          />
         </div>
 
-        <!-- Contact Me PopUp page-->
-        <div id="contactModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <div id="modalBody">
-                    <!-- Content from contact.html will be loaded here -->
-                </div>
-            </div>
+        <!-- Right Side Text and Buttons -->
+        <div class="w-full md:w-1/2 text-white space-y-6 text-center md:text-left">
+          <h2 class="text-2xl sm:text-3xl font-bold">About Me</h2>
+          <p class="text-base sm:text-lg leading-relaxed text-gray-200">
+            As a fresh graduate in Computer Science and Engineering, I
+            specialize in web & App development with hands-on experience in
+            deploying deep learning and machine learning based applications. I
+            bring a unique blend of technical prowess and creative
+            problem-solving to the table, eager to make a mark in the digital
+            landscape.
+          </p>
+          <div
+            class="flex flex-wrap justify-center md:justify-start gap-4 sm:gap-6 mt-4"
+            id="about-buttons"
+          >
+            <a
+              href="./assets/Resume.pdf"
+              target="_blank"
+              class="about-btn px-5 py-2 border border-white rounded-full text-white hover:bg-yellow-500 hover:text-black transition duration-300 text-sm sm:text-base"
+              >Resume</a
+            >
+            <a
+              href="https://github.com/Prabhat-2101/"
+              target="_blank"
+              class="about-btn px-5 py-2 border border-white rounded-full text-white hover:bg-yellow-500 hover:text-black transition duration-300 text-sm sm:text-base"
+              >GitHub</a
+            >
+            <a
+              href="https://www.linkedin.com/in/prabhat-kumar-raj-96681623b/"
+              target="_blank"
+              class="about-btn px-5 py-2 border border-white rounded-full text-white hover:bg-yellow-500 hover:text-black transition duration-300 text-sm sm:text-base"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+      </section>
+      <div class="w-full mt-10 mb-10 flex justify-center items-center">
+        <div class="w-150 border-2 border-white"></div>
+      </div>
+      <!-- Journey Section Starts Here -->
+      <section class="journey-box relative overflow-hidden px-4 sm:px-10 py-10" id="journey">
+        <div class="journey-heading text-white text-center text-2xl sm:text-3xl font-bold">
+          <h1>Education Journey</h1>
         </div>
 
-        <!-- About Me Section -->
-        <div class="my-info" id="myInfo">
-            <div class="left-part">
-                <img src="Images/prabhat.jpg" id="img">
-            </div>
-            <div class="right-part">
-                <h1>About Me </h1>
-                <p style="text-align: justify;">As a fresh graduate in Computer Science and Engineering, I specialize in web & App development with hands-on experience in deploying deep learning and machine learning based applications, I bring a unique blend of technical prowess and creative problem-solving to the table, eager to make a mark in the digital landscape.</p>
-                <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab('Experience')">Experience</p>
-                    <p class="tab-links" onclick="opentab('Education')">Education</p>
-                </div>
-                <div class="tab-content active-tab" id="Skills">
-                    <div class="skill-mf">
-                        <div id="skills-list"></div>
-                    </div>
-                    <script>
-                        const skills = [
-                            { subject: 'C++', proficiency: 95 },
-                            { subject: 'PYTHON', proficiency: 85 },
-                            { subject: 'Machine Learning & Deep Learning', proficiency: 80 },
-                            { subject: 'Cyber Secuirity', proficiency: 75 },
-                            { subject: 'DevOps Engineering', proficiency: 55 },
-                        ];
+        <div class="w-full flex justify-center items-start mt-10">
+          <div class="timeline w-full max-w-4xl relative pl-6 sm:pl-10">
+            <!-- Vertical Line -->
+            <div class="timeline__line absolute top-0 left-3 sm:left-5 w-1 bg-yellow-500 h-full z-0"></div>
 
-                        function generateSkillsHTML() {
-                            const skillsList = document.getElementById('skills-list');
-                            skills.forEach(skill => {
-                                const skillHTML = `
-                                    <span>${skill.subject}</span>
-                                    <span class="pull-right">${skill.proficiency}%</span>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: ${skill.proficiency}%" aria-valuenow="${skill.proficiency}" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                `;
-                                skillsList.insertAdjacentHTML('beforeend', skillHTML);
-                            });
-                        }
-                        generateSkillsHTML();
-                    </script>
-                </div>
-                <div class="tab-content" id="Education">
-                    <ul>
-                        <li><span>Matriculation </span><button class="educate-button" data-education="matric"> View Details</button></li>
-                        <li><span>Intermediate</span><button class="educate-button" data-education="intermediate">View Details</button></li>
-                        <li><span>Bachelor of Technology </span><button class="educate-button" data-education="bachelor"> View Details </button></li>
-                    </ul>
-                </div>
-                <div class="popup-window" id="popup">
-                    <div class="popup-content">
-                        <span class="close-button" id="closeButton">&times;</span>
-                        <div style="text-align: center;font-variant: small-caps;"><h3 id="educationTitle"></h3></div>
-                        <hr style="border: 1px gray solid;color: white;height: 2px;background-color: white;">
-                        <div class="education-details" style="padding: 10px;">
-                        <div><strong>College Name:</strong> <span id="popupCollegeName"></span></div>
-                        <div><strong>Year of Passing:</strong> <span id="popupYear"></span></div>
-                        <div><strong>CGPA:</strong> <span id="popupCGPA"></span></div>
-                        <div><strong>Achievements:</strong><ul id="popupAchievements"></ul></div>
-                        <div style="display: flex; justify-content: center;"> <button class="educate-button">See Marksheet</button></div></div>
-                    </div>
-                </div>
-                <div class="tab-content" id="Experience">
-                    <ul>
-                        <li><span>Intern</span><br>Working as Technology & Development Intern in VFSTR</li>
-                        <li><span>Responsibilities</span><br>Worked as Deputy Secretary in VCODE-2023 <br>Student Cordinator in Mahotsav-2023 & Srujanankura-2023</li>
-                    </ul>
-                </div>
-                <div class="text" style="display: flex; align-items: center; justify-content: center;">
-                    <p><a href="https://www.linkedin.com/in/prabhat-kumar-raj-96681623b/" class="home-button" target="_blank">Visit LinkedIn</a></p>
-                </div>
+            <!-- Timeline Section Item -->
+            <div class="timeline__section relative pl-10 mb-10">
+              <div class="timeline__section__bead absolute top-1 left-0 w-6 h-6 rounded-full bg-yellow-500 border-4 border-black z-10"></div>
+              <div class="timeline__section__content">
+                <h2 class="text-lg font-semibold">07/2024 - Present</h2>
+                <p>
+                  <strong>Full Stack Developer Intern</strong><br />
+                  Vignan’s Foundation for Science, Technology & Research, Guntur
+                </p>
+              </div>
             </div>
+
+            <div class="timeline__section relative pl-10 mb-10">
+              <div class="timeline__section__bead absolute top-1 left-0 w-6 h-6 rounded-full bg-yellow-500 border-4 border-black z-10"></div>
+              <div class="timeline__section__content">
+                <h2 class="text-lg font-semibold">08/2021 - 05/2025</h2>
+                <p>
+                  <strong>B.Tech in CSE</strong><br />
+                  Vignan’s Foundation for Science, Technology & Research, Guntur<br />
+                  • GPA: 8.64
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline__section relative pl-10 mb-10">
+              <div class="timeline__section__bead absolute top-1 left-0 w-6 h-6 rounded-full bg-yellow-500 border-4 border-black z-10"></div>
+              <div class="timeline__section__content">
+                <h2 class="text-lg font-semibold">07/2017 - 06/2019</h2>
+                <p>
+                  <strong>Intermediate in Science (BSEB)</strong><br />
+                  S.N.S. College, Motihari<br />
+                  • Percentage: 75.4%
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline__section relative pl-10 mb-10">
+              <div class="timeline__section__bead absolute top-1 left-0 w-6 h-6 rounded-full bg-yellow-500 border-4 border-black z-10"></div>
+              <div class="timeline__section__content">
+                <h2 class="text-lg font-semibold">2018</h2>
+                <p>
+                  <strong>Diploma in Office Automation and Financial Accounting</strong><br />
+                  EDUTECH Institute of Information Technology
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline__section relative pl-10 mb-10">
+              <div class="timeline__section__bead absolute top-1 left-0 w-6 h-6 rounded-full bg-yellow-500 border-4 border-black z-10"></div>
+              <div class="timeline__section__content">
+                <h2 class="text-lg font-semibold">04/2016 - 03/2017</h2>
+                <p>
+                  <strong>Matriculation (BSEB)</strong><br />
+                  Gopal Sah (+2) High School, Motihari<br />
+                  • Percentage: 77.2%
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <!-- Services Section -->
-        <div class="service-info" id="myServices">
-            <h1 class="sub-title">My Services</h1>
-            <div class="services">
-                <div class="services-list">
-                    <h2>Web Developement</h2>
-                    <hr>
-                    <p> As a skilled web developer, I specialize in creating dynamic and responsive websites that make a lasting impression. Utilizing the latest technologies such as HTML5, CSS3, and JavaScript, along with frameworks like React and Angular, I design and develop bespoke web solutions tailored to your unique needs. With meticulous attention to detail, I ensure that every website I build not only looks stunning but also functions seamlessly across devices, delivering an exceptional user experience.
-                    </p>
-                </div>
-                <div class="services-list">
-                    <h2>App Developement</h2>
-                    <hr>
-                    <p> With a passion for innovation, I excel in crafting user-centric mobile applications that bring ideas to life. Whether it's native iOS or Android development using Java, Kotlin or cross-platform solutions Flutter, I have the expertise to develop apps for your visionary objective. From concept to deployment, I prioritize functionality, performance, and user experience, ensuring that each app I create is intuitive, reliable, and visually appealing. 
-                    </p>
-                </div>
-                <div class="services-list">
-                    <h2>Deep Learning Based Apps</h2>
-                    <hr>
-                    <p>Deep learning-based apps leverage sophisticated neural network architectures to perform complex tasks such as image recognition, natural language processing, and recommendation systems. These applications harness the power of deep learning algorithms to achieve unparalleled accuracy and efficiency in tasks ranging from medical diagnostics to autonomous driving, revolutionizing industries and enhancing user experiences.</p>
-                </div>
-            </div>
-            <div class="redirect-buttom" style="text-align: center;"><a href="#" class="home-button">Visit Clients</a></div>
+      <!-- Journey Section Ends Here -->
+
+      <!-- Coding Profile Starts Here-->
+      <section id="coding" class="coding-box px-10 mt-10">
+        <h2 class="text-3xl text-white font-bold text-center mb-12">
+          Coding Journey
+        </h2>
+        <div
+          id="coding-container"
+          class="coding-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+        ></div>
+      </section>
+      <!-- Coding Profile Ends Here-->
+      <div class="w-full mt-10 mb-10 flex justify-center items-center">
+        <div class="w-150 border-2 border-white"></div>
+      </div>
+      <!-- Projects Section Starts Here -->
+      <section id="project" class="project-box px-10">
+        <h2 class="text-3xl text-white font-bold text-center mb-12">
+          My Projects
+        </h2>
+        <div
+          id="projects-container"
+          class="projects-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+        ></div>
+      </section>
+      <!-- Projects Section Ends Here -->
+       <div class="w-full mt-10 mb-10 flex justify-center items-center">
+        <div class="w-150 border-2 border-white"></div>
+      </div>
+      <!-- Footer Section Starts Here -->
+      <section
+        class="footer-box w-full text-white py-8 px-4 text-center opacity-0 translate-y-10"
+      >
+        <div class="max-w-4xl mx-auto">
+          <p class="text-sm mb-4">
+            © 2025 Prabhat Kumar Raj. All rights reserved.
+          </p>
+          <div class="flex justify-center gap-6 text-xl">
+            <a
+              href="https://github.com/Prabhat-2101"
+              target="_blank"
+              class="footer-icon"
+              aria-label="GitHub"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="mailto:prabhatkumarraj2003@gmail.com"
+              class="footer-icon"
+              aria-label="Email"
+            >
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/prabhat-kumar-raj-96681623b/"
+              target="_blank"
+              class="footer-icon"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/prabhat_sah_18"
+              target="_blank"
+              class="footer-icon"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
         </div>
-
-        <!-- CodingCareer Section -->
-        <div class="coding-info" id="myCoding">
-            <h1>My Coding Profile <i id="infoButton" class="fas fa-info-circle"></i>
-                <div id="notice" class="notice">Contest rankings are dynamic and may change weekly.</div>
-                </h1>
-            <div class="works code-info">
-                <div>
-                    <img src="Images/cc.jpeg" alt="">
-                    <div class="desc">
-                        <p>Global Rank: <span id="global-rank">13730</span></p>
-                        <h3><a href="https://www.codechef.com/users/prabhat2101">Codechef</a></h3>
-                    </div>
-                </div>
-                <div>
-                    <img src="Images/lc.png" alt="">
-                    <div class="desc">
-                        <p>Global Rank: <span id="global-rank">Top 16.6%</span></p>
-                        <h3><a href="https://leetcode.com/u/Prabhat_2101/">Leetcode</a></h3>
-                    </div>
-                </div>
-                <div>
-                    <img src="Images/gfg.png" alt="">
-                    <div class="desc">
-                        <p>University Rank: <span id="global-rank">4</span></p>
-                        <h3><a href="https://www.geeksforgeeks.org/user/sahprabhypbj/">GeeksForGeeks</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="redirect-buttom" style="text-align: center;"><a href="#myCoding" class="home-button" >Visit Coding Journey</a></div>
-        </div>
-
-        <!-- ProjectCareer Section -->
-        <div class="career" id="myCareer">
-            <h1>My Projects</h1>
-            <div class="works">
-                <div>
-                    <img src="Images/ride.png" alt="">
-                    <div class="desc">
-                        <h3><a href="https://github.com/Prabhat-2101/Ride-Karo">Ride Karo App (to be uploaded)</a></h3>
-                    </div>
-                </div>
-                <div>
-                    <img src="Images/cat_dog.png" alt="">
-                    <div class="desc">
-                        <h3><a href="https://catdogidentifierai.streamlit.app" target="_blank">Visit Cat-Dog Classifier App</a></h3>
-                    </div>
-                </div>
-                <div>
-                    <img src="Images/digit.png" alt="">
-                    <div class="desc">
-                        <h3><a href="https://handdigitdetectorai.streamlit.app/" target="_blank">Visit Handwritten Digit Recognition App</a></h3>
-                    </div>
-                </div>
-                <div>
-                    <img src="Images/emotion.png" alt="">
-                    <div class="desc">
-                        <h3><a href="https://moodscannerai.streamlit.app/" target="_blank">Visit Emotion Detection App</a></h3>
-                    </div>
-                </div>
-                <div>
-                    <img src="Images/chatanalyzer.png" alt="">
-                    <div class="desc">
-                        <h3><a href="https://chatanalyzerai.streamlit.app/" target="_blank">Visit Chat Analyzer App</a></h3>
-                    </div>
-                </div>
-                <div>
-                    <img src="Images/spotify.png" alt="">
-                    <div class="desc">
-                        <h3><a href="https://spotifyclone.prabhatraj.tech/" target="_blank">Visit Spotify Clone(Frontend)</a></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="redirect-buttom" style="text-align: center;"><a href="https://github.com/Prabhat-2101/" class="home-button" target="_blank">Visit More Project</a></div>
-        </div>
-
-        <!-- Footer Section -->
-        <footer class="footer" id="myContact">
-            <div class="footer-container">
-                <div class="social-media">
-                    <a href="https://www.instagram.com/prabhat_sah_18/" class="fa fa-instagram"></a>
-                    <a href="https://x.com/sahprabhat_2101" class="fa fa-twitter"></a>
-                    <a href="https://www.linkedin.com/in/prabhat-kumar-raj-96681623b/" class="fa fa-linkedin"></a>
-                    <a href="https://github.com/Prabhat-2101/" class="fa fa-github"></a>
-                </div>
-                <div class="contact-info">
-                    <p>Email: sahprabhat2101@gmail.com</p>
-                    <p>Phone: +91 9507286383</p>
-                    <p>Address: Meena Bazar NH-28A 2<sup>nd</sup> Street, Motihari</p>
-                </div>
-                <div class="privacy-policy">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms and Conditions</a>
-                </div>
-            </div>
-        </footer>
+      </section>
+      <!-- Footer Section Ends Here -->
     </div>
-</body>
-<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-<script>
-    /* Typed Message*/
-    var typed = new Typed('#element', {
-    strings: ['Web Developer.','App Developer.','DevOps Engineer.'],typeSpeed: 40,});
-    
-    /*  Showing tabs in about-me section */
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontent = document.getElementsByClassName("tab-content");
-    function opentab(tabName){
-        for(tab of tablinks){
-            tab.classList.remove("active-link");
-        }
-        for(tab of tabcontent){
-            tab.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabName).classList.add("active-tab");
-    }
-    
-    /* adding an event listener to show the contact page in popup view */
-    document.getElementById('contactLink').addEventListener('click', function(event) {
-        event.preventDefault();
-        showModal();
-    });
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+    integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+    integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="script.js"></script>
 
-    document.querySelector('.close').addEventListener('click', function() {
-        hideModal();
-    });
+  <script>
+    const projectContainer = document.getElementById("projects-container");
 
-    function showModal() {
-        fetch('contact.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('modalBody').innerHTML = data;
-                document.getElementById('contactModal').style.display = 'block';
-            });
-    }
+    const createCard = (repo) => {
+      const card = document.createElement("div");
+      card.className =
+        "project-card bg-white shadow-lg rounded-2xl p-4 opacity-0 transform translate-y-10";
 
-    function hideModal() {
-        document.getElementById('contactModal').style.display = 'none';
-    }
-    document.addEventListener('DOMContentLoaded', () => {
-        const buttons = document.querySelectorAll('.educate-button');
-        const popup = document.getElementById('popup');
-        const closeButton = document.getElementById('closeButton');
-        const popupEducationTitle = document.getElementById('educationTitle');
-        const popupCollegeName = document.getElementById('popupCollegeName');
-        const popupYear = document.getElementById('popupYear');
-        const popupCGPA = document.getElementById('popupCGPA');
-        const popupAchievements = document.getElementById('popupAchievements');
-        let flag = 0;   /* 0: Dark, 1: Light */
-        /*Education Details of 10th , 12th, B.tech*/
-        const educationDetails = {
-            intermediate: {
-                title:"Intermediate's Details",
-                collegeName: "Shri Narayan Singh College",
-                year: "2017-2019",
-                cgpa: "7.54",
-                achievements: ["Highest Math Scorer"]
+      const name = repo.name.replace(/[-_]/g, " ");
+      const createdDate = new Date(repo.created_at).toLocaleDateString();
+
+      card.innerHTML = `
+      <img src="assets/${repo.name.toLowerCase()}.png" alt="${name}" class="rounded-lg mb-4 w-full h-48 object-cover" />
+      <h3 class="text-xl font-semibold mb-2">${name}</h3>
+      <p class="text-sm text-gray-600 mb-2">Created: ${createdDate}</p>
+      <a href="${
+        repo.html_url
+      }" target="_blank" class="text-blue-600 underline">Code</a>
+    `;
+
+      projectContainer.appendChild(card);
+    };
+
+    const loadProjects = async () => {
+      for (const repo of repos) {
+        createCard(repo);
+      }
+      animateCards();
+    };
+
+    const animateCards = () => {
+      gsap.utils.toArray(".project-card").forEach((card) => {
+        gsap.fromTo(
+          card,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 80%",
+              toggleActions: "play none none reset",
             },
-            bachelor: {
-                title:"Bachelor's Details",
-                collegeName: "Vignan's Foundation for science, technology & research",
-                year: "2021-2025",
-                cgpa: "8.7",
-                achievements: ["Department Rank Holder", "Programming Contest Winner"]
+          }
+        );
+      });
+    };
+    loadProjects();
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const codingStats = [
+        {
+        id: "gfg",
+        platform: "GeeksforGeeks",
+        highestRating: "2★",
+        highestScore: "1500",
+        stats: { easy: 120, medium: 80, hard: 30 },
+        },
+        {
+        id: "leetcode",
+        platform: "LeetCode",
+        highestRating: "16584",
+        highestScore: "2009",
+        stats: { easy: 180, medium: 130, hard: 50 },
+        },
+        {
+        id: "codechef",
+        platform: "CodeChef",
+        highestRating: "23455",
+        highestScore: "1632",
+        stats: { easy: 100, medium: 70, hard: 25 },
+        },
+        {
+        id: "ninja",
+        platform: "Coding Ninja",
+        highestRating: "Master",
+        highestScore: "3944",
+        stats: { easy: 90, medium: 60, hard: 20 },
+        }
+    ];
+
+    const codingContainer = document.getElementById("coding-container");
+
+    codingStats.forEach((item) => {
+        const card = document.createElement("div");
+        card.className = "coding-card flex flex-col gap-5 bg-white rounded-xl shadow-lg p-6 relative overflow-hidden hover:shadow-2xl hover:scale-[1.03] transition duration-300 ease-in-out";
+        card.innerHTML = `
+        <h3 class="text-xl font-bold text-gray-800">${item.platform}</h3>
+        <p class="text-sm mt-2 text-gray-600">Ranking: ${item.highestRating}</p>
+        <p class="text-sm text-gray-600">Score: ${item.highestScore}</p>
+        <canvas id="chart-${item.id}" class="absolute inset-0 bg-white/90 p-4 rounded-xl hidden z-10" style="height: 100%; width: 100%;"></canvas>
+        `;
+        codingContainer.appendChild(card);
+
+        let chartInstance = null;
+        const canvas = card.querySelector(`#chart-${item.id}`);
+
+        card.addEventListener("mouseenter", () => {
+        canvas.classList.remove("hidden");
+        if (!chartInstance) {
+            chartInstance = new Chart(canvas, {
+            type: "doughnut",
+            data: {
+                labels: ["Easy", "Medium", "Hard"],
+                datasets: [{
+                data: [item.stats.easy, item.stats.medium, item.stats.hard],
+                backgroundColor: ["#10b981", "#f59e0b", "#ef4444"],
+                borderWidth: 1
+                }]
             },
-            matric: {
-                title:"Tenth's Details",
-                collegeName: "Gopal Sah High School",
-                year: "2016-2017",
-                cgpa: "7.7",
-                achievements: ["NA"]
+            options: {
+                plugins: {
+                legend: { position: "bottom" }
+                },
+                responsive: true,
+                maintainAspectRatio: false
             }
-        };
-
-        /*About Me section to show skill, experience and education*/
-        buttons.forEach(button => {
-            button.addEventListener('click', (event) => {
-                const educationType = event.target.getAttribute('data-education');
-                const details = educationDetails[educationType];
-                educationTitle.textContent = details.title;
-                popupCollegeName.textContent = details.collegeName;
-                popupYear.textContent = details.year;
-                popupCGPA.textContent = details.cgpa;
-                
-                popupAchievements.innerHTML = '';
-                details.achievements.forEach(achievement => {
-                    const li = document.createElement('li');
-                    li.textContent = achievement;
-                    popupAchievements.appendChild(li);
-                });
-
-                popup.style.display = 'block';
             });
-        });
-
-        closeButton.addEventListener('click', () => {
-            popup.style.display = 'none';
-        });
-
-        /*Showing the contact page using pop up window*/
-        window.addEventListener('click', (event) => {
-            if (event.target === popup) {
-                popup.style.display = 'none';
-            }
-            if (event.target == document.getElementById('contactModal')) {
-                hideModal();
-            }
-        });
-
-        /* Switching the modes*/
-        colorModeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            document.getElementsByClassName('hamburger-menu')[0].classList.toggle('dark-mode');
-            const offButton = document.querySelector('#off');
-            const onButton = document.querySelector('#on');
-            if(flag==1) {
-                offButton.style.display = "none";
-                onButton.style.display = "block";
-                flag = 0;
-            }else{
-                offButton.style.display = "block";
-                onButton.style.display = "none";
-                flag = 1;
-            }
-        });
-    });
-    
-    /*----- Hamburger and Navigation List-------*/
-    document.getElementById('hamburgerMenu').addEventListener('click', function() {
-        var navList = document.querySelector('.navigation-list');
-        if (navList.style.display === 'block') {
-            navList.style.display = 'none';
-        } else {
-            navList.style.display = 'block';
         }
-    });
-    
-    /*Showing Notice in Coding Info section in pop up*/
-    document.getElementById('infoButton').addEventListener('click', function(event) {
-        var notice = document.getElementById('notice');
-        if (notice.style.display === 'block') {
-            notice.style.display = 'none';
-        } else {
-            var buttonRect = event.target.getBoundingClientRect();
-            notice.style.display = 'block';
-            notice.style.top = (buttonRect.bottom + window.scrollY) + 'px';
-            notice.style.left =  buttonRect.left + 'px';
-        }
-    });
+        });
 
-    // Close notice when clicking outside
-    document.addEventListener('click', function(event) {
-        var notice = document.getElementById('notice');
-        if (!event.target.matches('#infoButton') && !event.target.matches('.notice')) {
-            notice.style.display = 'none';
+        card.addEventListener("mouseleave", () => {
+        canvas.classList.add("hidden");
+        if (chartInstance) {
+            chartInstance.destroy();
+            chartInstance = null;
         }
-    });
+        });
 
+        // Animate on scroll
+        gsap.from(card, {
+        scrollTrigger: {
+            trigger: card,
+            start: "top 90%",
+            toggleActions: "play none none none"
+        },
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        ease: "power2.out"
+        });
+    });
+    });
 </script>
+
 </html>
